@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { FaAngleRight } from "react-icons/fa6";
 import Itemprop from './itemprop';
-import { useProduct } from './Productcontext';
+import products from './allproducts';
 
 const Items = () => {
-    const { products } = useProduct();
 
     const [currentPage, setCurrentPage] = useState(1);
     const ProductsPerPage = 12;
@@ -19,7 +18,7 @@ const Items = () => {
             <div className="main">
                 <div className="p-[15px] sm:p-6 max-w-screen-xl mx-auto">
                     <div className="inner-main">
-                        <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                         <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             {currentProducts.map(product => (
                                 <Itemprop
                                     key={product.id}
@@ -33,7 +32,7 @@ const Items = () => {
                                     remaining={product.remaining}
                                 />
                             ))}
-                        </div>
+                        </div> 
 
                         <div className="py-[20px] flex flex-wrap items-center">
                             {/* pages num */}

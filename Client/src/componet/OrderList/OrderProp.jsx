@@ -1,19 +1,29 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Orderprop = ({ product, orderId, date, name, img, status, amount }) => {
+    const navigate = useNavigate();
     const statusDot = status === 'Delivered' ? 'bg-[#003F62]' : 'bg-[#FFA52F]';
 
+    const handleRowClick = () => {
+        console.log("Navigating to:", `/home/orderlist/${orderId}`);
+        navigate(`/home/orderlist/${orderId}`);
+        window.scrollTo(0, 0);
+    };
+
     return (
-        <tr className="border-b border-[#ddddda] hover:bg-gray-50 text-[#000000]">
-            <td className="p-">
+        <tr
+            onClick={handleRowClick}
+            className="border-b border-[#ddddda] hover:bg-gray-50 text-[#000000] cursor-pointer"
+        >
+            <td className="p-[15px]">
                 <input type="checkbox" className="w-4 h-4" />
             </td>
             <td className="p-[15px]">{product}</td>
-            <td className="p-[15px]">{orderId}</td>
+            <td className="p-[15px]">#{product.orderId}</td>
             <td className="p-[15px]">{date}</td>
             <td className="p-[15px]">
                 <div className="flex items-center gap-2">
-                    {/* <img src={img} alt={name} className="w-6 h-6 rounded-full" /> */}
                     <span>{name}</span>
                 </div>
             </td>
@@ -26,9 +36,8 @@ const Orderprop = ({ product, orderId, date, name, img, status, amount }) => {
             <td className="p-[15px]">{amount}</td>
         </tr>
 
-
-
     );
 };
 
 export default Orderprop;
+

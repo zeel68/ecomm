@@ -40,7 +40,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
                             <div className="flex text-[#232323] relative justify-start items-center cursor-pointer hover:rounded-md hover:bg-[#00538A] hover:text-[#ffffff] " onClick={toggleShop}>
                                 <p className='px-[20px] py-[10px]'>Categories</p>
-                                <i class="fa-solid fa-chevron-down absolute right-2 text-[16px] font-semibold"></i>
+                                <i className="fa-solid fa-chevron-down absolute right-2 text-[16px] font-semibold"></i>
                             </div>
                             {menu && (
                                 <div className="ml-[15px] block transition-all duration-300 ease-in-out">

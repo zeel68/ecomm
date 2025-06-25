@@ -1,16 +1,16 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
-import products from '../AllProduct/allproducts';
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Breadcrum from '../Breadcrum/Breadcrum';
 import { IoBagHandleOutline } from "react-icons/io5"
 import { IoPrint } from "react-icons/io5";
+import orders from '../OrderList/Orders';
 
 const OrderDetails = () => {
-    const { id } = useParams();
-    const product = products.find(p => p.id === parseInt(id));
+    const { orderid } = useParams();
+    const product = orders.find(p => p.orderId.toString() === orderid);
 
-    if (!product) return <p>Product not found.</p>;
+    if (!product) return <p className="p-5 text-red-500">Order not found</p>;
 
     return (
         <>
@@ -29,9 +29,9 @@ const OrderDetails = () => {
                 <div className="bg-white rounded-md p-[15px] shadow-md my-[20px]">
                     {/* Header */}
                     <div className="flex flex-wrap justify-between items-center mb-[15px]">
-                        <h2 className="font-semibold text-lg">
-                            Orders ID: <span className="text-black">#{id}</span>
-                            <span className="ml-[8px] text-xs text-black bg-[#FFA52FCC] px-[5px] py-[2px] rounded">Pending</span>
+                        <h2 className="flex font-semibold text-lg">
+                            Orders ID: <td className="text-black">#{product.orderId}</td>
+                            <span className="ml-[8px] text-xs text-black bg-[#FFA52FCC] px-[5px] py-[5px] rounded">Pending</span>
                         </h2>
                         <div className="flex items-center gap-6 ">
                             <select className="text-sm rounded px-[20px] p-[5px] bg-[#F0F6F9] shadow-md">
@@ -127,7 +127,7 @@ const OrderDetails = () => {
                                             <input type="checkbox" className="accent-[#00538A]" />
                                             <span>Lorem Ipsum</span>
                                         </td>
-                                        <td className="p-[10px]">#{id}</td>
+                                        <td className="p-[10px]">#{product.orderId}</td>
                                         <td className="p-[10px]">2</td>
                                         <td className="p-[10px] text-right">₹800.40</td>
                                     </tr>
@@ -158,8 +158,6 @@ const OrderDetails = () => {
                         </div>
                     </div>
                 </div>
-
-
 
             </div >
         </>

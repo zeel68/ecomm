@@ -1,7 +1,14 @@
 import React from 'react'
 import Breadcrum from '../Breadcrum/Breadcrum'
+import products from '../AllProduct/allproducts';
+import { useParams } from 'react-router-dom';
+import { FaCircleCheck } from "react-icons/fa6";
 
 const ProductD = () => {
+    const { id } = useParams();
+    const product = products.find(p => p.id.toString() === id);
+
+    if (!product) return <p className="p-5 text-red-500">Order not found</p>;
     return (
         <>
             <div className="max-w-screen-xl mx-auto px-[15px]">
@@ -24,6 +31,11 @@ const ProductD = () => {
 
                         {/* Left Section */}
                         <div className="w-full lg:w-1/2">
+
+                            <div className='mb-[10px]'>
+                                product id: {id}
+                            </div>
+
                             <div className='mb-[10px]'>
                                 <label className="block font-medium text-lg">Product Name</label>
                                 <input type="text" className="w-full border rounded text-sm " />
@@ -86,28 +98,33 @@ const ProductD = () => {
                             {/* Product Gallery */}
                             <div>
                                 <label className="block font-medium mb-[10px]">Product Gallery</label>
-                                <div className="border border-dashed border-gray-300 rounded p-4 text-center text-sm text-gray-500">
+                                <div className="border border-dashed border-gray-300 rounded p-[15px] text-center text-sm text-gray-500">
                                     <p>Drop your images here, or browse</p>
                                     <p className="text-xs">(jpg, png are allowed)</p>
                                 </div>
 
-                                <div className="mt-4 space-y-3">
+                                <div className="mt-[15px] space-y-3">
                                     {[...Array(4)].map((_, i) => (
-                                        <div key={i} className="flex items-center gap-2">
-                                            <div className="w-10 h-10 bg-gray-200 rounded"></div>
-                                            <span className="text-sm flex-1">Product thumbnail.png</span>
-                                            <button className="text-blue-600 hover:underline text-sm">Edit</button>
-                                            <button className="text-red-500 hover:underline text-sm">Delete</button>
+                                        <div key={i}>
+                                            <div className="flex gap-2 py-[6px]">
+                                                <div className="w-10 h-10 bg-gray-200 rounded"></div>
+                                                <div className="flex-1 ">
+                                                    <span className="text-sm ">Product thumbnail.png</span>
+                                                    <div className="w-full h-[3px] bg-[linear-gradient(to_right,_#00538A_60%,_#4A69E2_60%)] rounded"></div>
+                                                </div>
+                                                <FaCircleCheck className="text-[#00538A] mt-[10px] mr-[20px]" />
+                                            </div>
+
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="flex justify-end gap-4 mt-8">
-                                <button className="bg-black text-white px-[10px] py-[5px] rounded">Update</button>
-                                <button className="bg-[#00538A] text-white px-6 py-2 rounded">Delete</button>
-                                <button className="bg-gray-200 text-black px-6 py-2 rounded">Cancel</button>
+                            <div className="flex justify-end gap-4 mt-[10px]">
+                                <button className="bg-black text-white px-[35px] rounded">Update</button>
+                                <button className="bg-[#00538A] text-white px-[35px] rounded">Delete</button>
+                                <button className="bg-gray-200 text-black px-[35px] rounded">Cancel</button>
                             </div>
                         </div>
 

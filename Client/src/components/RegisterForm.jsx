@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../actions/authActions';
 import { useNavigate } from 'react-router-dom';
-import './Reg.css';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from 'jwt-decode';
 
 const Register = () => {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -19,7 +20,7 @@ const Register = () => {
     dispatch(register(formData));
   };
 
-  // Redirect to login after successful registration
+  // Redirect to login
   useEffect(() => {
     if (registered) {
       alert('Registration successful!');
@@ -30,6 +31,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <h2>Register</h2>
+
       {error && <p className="error">{error}</p>}
 
       <form className="register-form" onSubmit={handleSubmit}>
