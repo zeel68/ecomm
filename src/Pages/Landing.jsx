@@ -14,8 +14,8 @@ const Landing = () => {
         <>
             <Section1 />
             <Brand />
-            <Cart/>
-            <Top />
+            <Cart category="arrival" />
+            <Top category="arrival" />
             <Style />
             <Customer />
         </>
