@@ -1,34 +1,56 @@
-import React from 'react';
-import { GrFormNextLink, GrFormPreviousLink } from 'react-icons/gr';
+import React, { useState } from 'react';
+import Products from '../../Products';
+import { FaAngleRight, FaAngleLeft } from 'react-icons/fa';
 
 const Next = () => {
-    const pages = [1, 2, 3, '...', 6, 7, 8];
+    const [currentPage, setCurrentPage] = useState(1);
+    const ordersPerPage = 9;
+
+    const totalPages = Math.ceil(Products.length / ordersPerPage);
+    const indexOfLast = currentPage * ordersPerPage;
+    const indexOfFirst = indexOfLast - ordersPerPage;
+    const currentOrders = Products.slice(indexOfFirst, indexOfLast); // Use to render paginated items
 
     return (
-        <div className="w-full overflow-x-auto mt-6">
-            <div className="flex items-center gap-2 justify-between min-w-[360px]">
+        <div className="py-[20px] flex flex-wrap items-center justify-center">
+            {/* Previous Button */}
+            <button
+                onClick={() => setCurrentPage(prev => prev - 1)}
+                disabled={currentPage === 1}
+                className={`border px-[15px] py-[5px] m-[5px] rounded-md flex items-center gap-1 transition ${currentPage === 1
+                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
+                    : 'hover:bg-black hover:text-white text-black'
+                    }`}
+            >
+                <FaAngleLeft /> Previous
+            </button>
 
-                {/* Previous */}
-                <button className="px-4 sm:px-6 py-2 sm:py-3 border border-black flex items-center gap-2 text-sm sm:text-base hover:bg-black hover:text-white transition-all">
-                    <GrFormPreviousLink className="text-lg" />
-                    Previous
+            {/* Page Numbers */}
+            {[1, 2, 3, 4].map((page) => (
+                <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`border px-[12px] py-[5px] m-[5px] rounded-md ${currentPage === page ? 'bg-[#000] text-white' : 'hover:bg-[#000] hover:text-white text-black'}`}>
+                    {page}
                 </button>
+            ))}
 
-                {/* Numbers */}
-                <div className="flex items-center gap-1 sm:gap-2 text-sm font-medium text-gray-800">
-                    {pages.map((page, index) => (
-                        <button key={index} className={`w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center  transition-all ${page === 1 ? 'bg-black text-white' : 'hover:bg-black hover:text-white'}`}>
-                            {page}
-                        </button>
-                    ))}
-                </div>
+            <span className="mx-2 font-semibold">...</span>
 
-                {/* Next */}
-                <button className="px-4 sm:px-6 py-2 sm:py-3 border border-black flex items-center gap-2 text-sm sm:text-base hover:bg-black hover:text-white transition-all">
-                    Next
-                    <GrFormNextLink className="text-lg" />
-                </button>
-            </div>
+            {/* Last Page Button */}
+            <button
+                onClick={() => setCurrentPage(totalPages)}
+                className={`border px-[12px] py-[5px] m-[5px] rounded-md ${currentPage === totalPages ? 'bg-[#000] text-white' : 'hover:bg-[#000] hover:text-white text-black'}`} >
+                {totalPages}
+            </button>
+
+            {/* Next  */}
+            <button
+                onClick={() => setCurrentPage(prev => prev + 1)}
+                disabled={currentPage === totalPages}
+                className={`border px-[15px] py-[5px] m-[5px] rounded-md flex items-center gap-1 transition ${currentPage === totalPages ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'hover:bg-[#000] hover:text-white text-black'}`} >
+                Next <FaAngleRight />
+            </button>
         </div>
     );
 };

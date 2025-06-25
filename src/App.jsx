@@ -6,6 +6,10 @@ import Footer from './Comonent/Footer/Footer';
 import Categoryitem from './Comonent/Category_Page2/Categoryitem';
 import Cart from './Comonent/Cart/Cart';
 import Product from './Comonent/productdisplay/Product';
+import Cat from './Comonent/Category_Page2/Cat';
+import Bestdeals from './Comonent/Bestdealpage/Bestdeals';
+import MainPage from './Comonent/Arrivalpage/MainPage';
+import Onsale from './Comonent/Onsalepage/Onsale';
 
 const App = () => {
   return (
@@ -13,10 +17,10 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/shop" element={<Categoryitem category="shop" />} />
-        <Route path="/Onsale" element={<Categoryitem category="onsale" />} />
-        <Route path="/Arrival" element={<Categoryitem category="shop" />} />
-        <Route path="/BestDeals" element={<Categoryitem category="onsale" />} />
+        <Route path="/shop" element={<Cat />} />
+        <Route path="/onsale" element={<Onsale />} />
+        <Route path="/Arrival" element={<MainPage />} />
+        <Route path="/BestDeals" element={<Bestdeals />} />
 
         <Route path='/product' element={<Product />} />
         <Route path="/Product/:ProductId" element={<Product />} />

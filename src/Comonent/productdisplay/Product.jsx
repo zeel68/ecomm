@@ -3,17 +3,22 @@ import Productdisplay from './Productdisplay';
 import Breadcrum from '../breadcrums/Breadcrum';
 import { Context } from '../../context/Context';
 import { useParams } from 'react-router-dom';
+import Reviews from './Reviews';
+import Related from './Related';
 
 const Product = () => {
   const { Products } = useContext(Context);
   const { ProductId } = useParams();
-
-  const product = Products.find((p) => p.id === Number(ProductId)); 
+  const product = Products.find((e) => e.id === Number(ProductId));
 
   return (
     <>
-      <Breadcrum product={product} />
+      {product && (
+        <Breadcrum path={["Home", product.category]} current={product.title} />
+      )}
       <Productdisplay product={product} />
+      <Reviews />
+      <Related category="related" />
     </>
   );
 };
