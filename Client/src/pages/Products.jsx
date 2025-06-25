@@ -1,10 +1,16 @@
 import React from 'react'
 import Items from '../componet/AllProduct/Items'
+import ProductTop from '../componet/AllProduct/ProductTop'
+import Footer from '../componet/Footer/Footer'
 
 const Products = () => {
     return (
         <>
-            <Items />
+            <div className="bg-[#DCE9F2] font-Rubik">
+                <ProductTop />
+                <Items />
+                <Footer />
+            </div>
         </>
     )
 }

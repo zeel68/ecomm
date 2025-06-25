@@ -45,13 +45,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                             {menu && (
                                 <div className="ml-[15px] block transition-all duration-300 ease-in-out">
                                     <ul className='list-none'>
-                                        <li className='p-[7px] mr-[10px] transition-all duration-500 hover:bg-[#00538A] hover:text-white hover:rounded-md'><Link to="/home">Lorem ipsum</Link></li>
-                                        <li className='p-[7px] mr-[10px] transition-all duration-500 hover:bg-[#00538A] hover:text-white hover:rounded-md'><Link to="/home">Lorem ipsum</Link></li>
-                                        <li className='p-[7px] mr-[10px] transition-all duration-500 hover:bg-[#00538A] hover:text-white hover:rounded-md'><Link to="/home">Lorem ipsum</Link></li>
+                                        <li className='p-[7px] transition-all duration-500'><Link to="/home" className="flex justify-between items-center">Lorem ipsum
+                                            <span className="bg-[#E7E7E3] text-black text-sm rounded px-[10px] py-[7px] hover:bg-[#00538A] hover:text-[#ffffff]">21</span></Link></li>
+                                        <li className='p-[7px] transition-all duration-500 '><Link to="/home" className="flex justify-between items-center">Lorem ipsum
+                                            <span className="bg-[#E7E7E3] text-black text-sm rounded px-[10px] py-[7px] hover:bg-[#00538A] hover:text-[#ffffff]">21</span></Link></li>
+                                        <li className='p-[7px] transition-all duration-500'><Link to="/home" className="flex justify-between items-center">Lorem ipsum
+                                            <span className="bg-[#E7E7E3] text-black text-sm rounded px-[10px] py-[7px] hover:bg-[#00538A] hover:text-[#ffffff]">21</span></Link></li>
+                                        <li className='p-[7px] transition-all duration-500'><Link to="/home" className="flex justify-between items-center">Lorem ipsum
+                                            <span className="bg-[#E7E7E3] text-black text-sm rounded px-[10px] py-[7px] hover:bg-[#00538A] hover:text-[#ffffff]">21</span></Link></li>
+                                        <li className='p-[7px] transition-all duration-500'><Link to="/home" className="flex justify-between items-center">Lorem ipsum
+                                            <span className="bg-[#E7E7E3] text-black text-sm rounded px-[10px] py-[7px] hover:bg-[#00538A] hover:text-[#ffffff]">21</span></Link></li>
                                     </ul>
                                 </div>
                             )}
-
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,6 @@ import products from './allproducts';
 
 const ProductContext = createContext();
 
-
 export const ProductProvider = ({ children }) => {
     return (
         <ProductContext.Provider value={{ products }}>
@@ -13,3 +12,4 @@ export const ProductProvider = ({ children }) => {
 };
 
 export const useProduct = () => useContext(ProductContext);
+
