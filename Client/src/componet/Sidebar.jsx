@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { MdOutlineDashboard } from "react-icons/md";
 import { BsBox2 } from "react-icons/bs";
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
@@ -21,21 +21,40 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                     <div className="mt-[32px]">
                         <div className="inner-items">
 
-                            <div className="m-[15px]">
-                                <div className="flex hover:bg-[#00538A] rounded-[10px] hover:text-[#ffffff] p-[10px]">
-                                    <MdOutlineDashboard className='dash m-[5px]' />
-                                    <p className='ml-[15px] p-[5px] font-medium text-[14px] tracking-tight uppercase'><Link to="/home/dashboard">DASHBOARD</Link></p>
-                                </div>
+                            <div className="m-[15px] flex flex-col gap-2">
+                                <NavLink
+                                    to="/home"
+                                    end
+                                    className={({ isActive }) =>
+                                        `flex rounded-[10px] p-[10px] items-center ${isActive ? 'bg-[#00538A] text-white' : 'hover:bg-[#00538A] hover:text-white'
+                                        }`
+                                    }
+                                >
+                                    <MdOutlineDashboard className="m-[5px]" />
+                                    <p className="ml-[15px] p-[5px] font-medium text-[14px] tracking-tight uppercase">DASHBOARD</p>
+                                </NavLink>
 
-                                <div className="flex hover:bg-[#00538A] rounded-[10px] hover:text-[#ffffff] p-[10px]">
-                                    <BsBox2 className='product m-[5px]' />
-                                    <p className='ml-[15px] p-[7px] font-medium text-[14px] tracking-tight uppercase'><Link to="/home/product">All PRODUCTS</Link></p>
-                                </div>
+                                <NavLink
+                                    to="/home/product"
+                                    className={({ isActive }) =>
+                                        `flex rounded-[10px] p-[10px] items-center ${isActive ? 'bg-[#00538A] text-white' : 'hover:bg-[#00538A] hover:text-white'
+                                        }`
+                                    }
+                                >
+                                    <BsBox2 className="m-[5px]" />
+                                    <p className="ml-[15px] p-[5px] font-medium text-[14px] tracking-tight uppercase">ALL PRODUCTS</p>
+                                </NavLink>
 
-                                <div className="flex hover:bg-[#00538A] rounded-[10px] hover:text-[#ffffff] p-[10px]">
-                                    <HiOutlineClipboardDocumentList className='list m-[5px]' />
-                                    <p className='ml-[15px] p-[7px] font-medium text-[14px] tracking-tight uppercase'><Link to="/home/orderlist">ORDER LIST</Link></p>
-                                </div>
+                                <NavLink
+                                    to="/home/orderlist"
+                                    className={({ isActive }) =>
+                                        `flex rounded-[10px] p-[10px] items-center ${isActive ? 'bg-[#00538A] text-white' : 'hover:bg-[#00538A] hover:text-white'
+                                        }`
+                                    }
+                                >
+                                    <HiOutlineClipboardDocumentList className="m-[5px]" />
+                                    <p className="ml-[15px] p-[5px] font-medium text-[14px] tracking-tight uppercase">ORDER LIST</p>
+                                </NavLink>
                             </div>
 
                             <div className="flex text-[#232323] relative justify-start items-center cursor-pointer hover:rounded-md hover:bg-[#00538A] hover:text-[#ffffff] " onClick={toggleShop}>

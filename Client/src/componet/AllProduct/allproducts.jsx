@@ -8,7 +8,7 @@ const products = [
         price: '₹120.00',
         details: 'Powerful battery suitable for electronic devices.',
         sales: '500',
-        remaining: '250'
+        remaining: '2250'
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const products = [
         price: '₹120.00',
         details: 'Powerful battery suitable for electronic devices.',
         sales: '500',
-        remaining: '250'
+        remaining: '200'
     },
     {
         id: 3,

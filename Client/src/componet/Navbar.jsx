@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { CiSearch } from "react-icons/ci";
 import { FaBell } from "react-icons/fa";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
+import { FiLogOut } from 'react-icons/fi';
+import { IoIosArrowForward } from 'react-icons/io';
 
 function Navbar({ toggleSidebar }) {
     const { user } = useSelector((state) => state.auth);
     const [username, setUsername] = useState('');
     // const [email, setemail] = useState('');
-
 
     useEffect(() => {
         if (user?.username) {
@@ -21,8 +24,30 @@ function Navbar({ toggleSidebar }) {
         }
     }, [user]);
 
+    // Notifications
+    const [showNotifications, setShowNotifications] = useState(false);
+
+    const toggleNotifications = () => {
+        setShowNotifications(!showNotifications);
+    };
+
+    // admin toggle
+    const [admin, setadmin] = useState(false);
+
+    const admindropdown = () => {
+        setadmin(!admin);
+    };
+
+    //  logout
+    var navigate = useNavigate();
+    const logout = () => {
+        localStorage.clear();
+        navigate('/');
+    };
+
     return (
         <nav className='navbar w-[100%] bg-white relative index-[10] text-black border border-[#00538A]'>
+
             <div className="inner flex justify-between items-center p-[15px]">
                 <i className="fa fa-bars menu-toggle-btn" onClick={toggleSidebar}></i>
 
@@ -32,22 +57,69 @@ function Navbar({ toggleSidebar }) {
                 </div>
 
                 <div className="right flex justify-between">
-                    <div className="w-[50px]">
-                        <FaBell className='text-[#232323] m-[10px]' />
+
+                    <div className="relative inline-block text-left">
+                        <div className="w-[50px]" onClick={toggleNotifications}>
+                            <FaBell className="text-[#232323] m-[10px] cursor-pointer" />
+                        </div>
+
+                        {/* Notifications Pop-pop */}
+                        {showNotifications && (
+                            <div className="absolute right-0 top-15 mt-[5px] w-[300px] bg-white shadow-md rounded-lg z-10">
+                                <div className=" flex justify-between items-center p-[8px]">
+                                    <div className="font-semibold">Notifications</div>
+                                    <IoMdCloseCircleOutline onClick={toggleNotifications} />
+                                </div>
+                                <div className="max-h-[200px] overflow-y-auto">
+                                    {[1, 2, 3, 4].map((item, idx) => (
+                                        <div key={idx} className="flex items-center gap-3 p-[5px] bg-[#FAFAFA] m-[5px] rounded-md">
+                                            <div className="w-[40px] h-[40px] bg-gray-300 rounded" />
+                                            <div className="flex-grow">
+                                                <p className="font-[12px]">Lorem Ipsum</p>
+                                                <p className="text-[10px]">₹140</p>
+                                                <p className="text-xs text-gray-500">Nov 15, 2023</p>
+                                            </div>
+                                            <span className="text-xs bg-[#00538A] text-white px-[10px] py-[5px] rounded">Sold</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="flex justify-between items-center p-[5px]">
+                                    <button className="text-[10px]">✓ MARK ALL AS READ</button>
+                                    <button className="bg-[#00538A] text-white text-[10px] px-[10px] py-[5px] rounded">VIEW ALL NOTIFICATION</button>
+                                </div>
+                            </div>
+                        )}
                     </div>
-                    <div className="user">
-                        <img className="w-[100%] rounded-[50%] max-w-[35px]" src="../src/assets/img.jpg" alt="User" />
-                    </div>
-                    <div className="flex items-center">
-                        <div className="flex flex-wrap p-[5px] items-center justify-start mr-[12px] w-[85px]">
-                            <p className='text-black text-[14px]'>{username || 'User'}</p>
-                            {/* <span className='text-inner'>{email || 'user@example.com'}</span> */}
+
+                    <div className="flex " onClick={admindropdown}>
+                        <div className="user">
+                            <img className="w-[100%] rounded-[50%] max-w-[35px]" src="../src/assets/img.jpg" alt="User" />
+                        </div>
+                        <div className="flex items-center">
+                            <div className="flex flex-wrap p-[5px] items-center justify-start mr-[5px] w-[85px]">
+                                <p className='text-black text-[14px]'>{username || 'User'}</p>
+                                {/* <span className='text-inner'>{email || 'user@example.com'}</span> */}
+                            </div>
                         </div>
                     </div>
+
+                    {admin && (
+                        <div className="absolute right-15 top-20 mt-[5px] p-[10px] w-[200px] bg-white shadow-md rounded-md z-10 text-[#232321]">
+                            <h3 className="font-bold text-black text-[20px] mb-[5px] p-[5px]">{username || 'Admin'}</h3>
+                            <div className="flex items-center justify-between p-[5px] hover:bg-gray-100 hover:rounded cursor-pointer">
+                                <span className="text-[14px] text-[#232321]">CHANGE PASSWORD</span>
+                                <IoIosArrowForward className="text-gray-600 text-sm" />
+                            </div>
+                            <div onClick={logout} className="flex items-center justify-between p-[5px] hover:bg-gray-100 hover:rounded cursor-pointer">
+                                <span className="text-[14px] text-[#232321]">LOG OUT</span>
+                                <FiLogOut className="text-gray-600 text-sm" />
+                            </div>
+                        </div>
+                    )}
                 </div>
 
             </div>
-        </nav>
+        </nav >
     );
 }
 

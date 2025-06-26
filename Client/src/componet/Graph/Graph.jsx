@@ -1,6 +1,7 @@
 import React from 'react'
 import Gprop from './Gprop'
 import { CiMenuKebab } from "react-icons/ci"
+import SalesChart from './SalesChart'
 
 const Graph = () => {
     return (
@@ -9,7 +10,7 @@ const Graph = () => {
                 <div className="block px-[15px] mx-auto box-border max-w-screen-xl">
                     <div className="flex">
                         {/* right */}
-                        <div className="block w-[65%] bg-[#ffffff] rounded-md shadow-md p-[10px]">
+                        <div className="block w-[60%] bg-[#ffffff] rounded-md shadow-md p-[10px]">
                             <div className="flex justify-between">
                                 <p className='pt-[23px] pr-0 pb-0 text-lg font-semibold'>Sale Graph</p>
                                 <div className="flex mh-[15px]">
@@ -19,12 +20,13 @@ const Graph = () => {
                                 </div>
                             </div>
                             <hr />
-                            <div className="items-center py-[30px]">
-                                <img className='block w-[100%] p-[20px] ' src="../src/assets/chart.png" alt="chart" />
+                            <div className="items-center p-[30px]">
+                                {/* <img className='block w-[100%] p-[20px] ' src="../src/assets/chart.png" alt="chart" /> */}
+                                <SalesChart />
                             </div>
                         </div>
                         {/* left */}
-                        <div className="w-[45%] bg-[#ffffff] p-[20px] rounded-md shadow-md mx-[15px] max-w-sm">
+                        <div className="w-[40%] bg-[#ffffff] p-[20px] rounded-md shadow-md ml-[15px] max-w-sm">
                             <div className="flex justify-between">
                                 <p className='pt-[15px] pr-0 text-lg font-semibold'>Best Sellers</p>
                                 <CiMenuKebab className="text-black text-2xl" />

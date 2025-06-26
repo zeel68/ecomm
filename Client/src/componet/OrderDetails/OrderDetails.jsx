@@ -52,7 +52,7 @@ const OrderDetails = () => {
                     <div className="flex grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 py-[10px] ">
                         <div className="border rounded p-[10px] w-full">
                             <p className="flex font-semibold mb-1">
-                                <div className="items-center justify-center bg-[#00538A] rounded-md">
+                                <div className="items-center justify-center bg-[#00538A] rounded-md mr-[5px]">
                                     <IoBagHandleOutline className="icon text-3xl m-[3px] p-[5px] text-white" />
                                 </div> Customer</p>
                             <div className="px-[40px]">
@@ -65,7 +65,7 @@ const OrderDetails = () => {
 
                         <div className="border rounded p-[10px] w-full">
                             <p className="flex font-semibold mb-1">
-                                <div className="items-center justify-center bg-[#00538A] rounded-md">
+                                <div className="items-center justify-center bg-[#00538A] rounded-md mr-[5px]">
                                     <IoBagHandleOutline className="icon text-3xl m-[3px] p-[5px] text-white" />
                                 </div> Order Info</p>
                             <div className="px-[40px]">
@@ -80,7 +80,7 @@ const OrderDetails = () => {
                         <div className="border rounded p-[10px] w-full">
 
                             <p className="flex font-semibold mb-1">
-                                <div className=" items-center justify-center bg-[#00538A] rounded-md">
+                                <div className=" items-center justify-center bg-[#00538A] rounded-md mr-[5px]">
                                     <IoBagHandleOutline className="icon text-3xl m-[3px] p-[5px] text-white" />
                                 </div>Deliver to</p>
                             <div className="px-[40px]">
@@ -93,14 +93,14 @@ const OrderDetails = () => {
 
                     {/* Payment  */}
                     <div className="flex lg:grid-cols-2 gap-4">
-                        <div className="border rounded p-[10px] shadow-sm w-[32%]">
+                        <div className="border rounded p-[10px] shadow-sm w-[33%]">
                             <p className="font-semibold mb-[5px]">Payment Info</p>
                             <p className="flex text-[#70706E]"><img className="w-[10%] h-[100%] mt-[8px] pr-[5px]" src="../../src/assets/Vector.png" alt="vector" /> Master Card **** 6557</p>
                             <p className="text-sm text-[#70706E]">Business name: Shristi Singh</p>
                         </div>
-                        <div className=" p-[10px] w-[68%]">
+                        <div className=" pl-[5px] w-[68%]">
                             <label className="block text-sm font-medium">Note</label>
-                            <textarea rows={3} placeholder="Type some notes" className="w-full border rounded p-[5px] text-sm"></textarea>
+                            <textarea rows={3} placeholder="Type some notes" className="w-full rounded p-[5px] text-sm outline"></textarea>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ const OrderDetails = () => {
 
                     <div className="overflow-x-auto">
                         <table className="min-w-full text-sm">
-                            <thead className="bg-gray-100 text-gray-700 border-b">
+                            <thead className="text-gray-700 border-b border-[rgba(132,131,131,0.2)]">
                                 <tr>
                                     <th className="p-[10px] text-left">Product Name</th>
                                     <th className="p-[10px] text-left">Order ID</th>
@@ -122,7 +122,7 @@ const OrderDetails = () => {
                             </thead>
                             <tbody>
                                 {[1, 2, 3, 4].map((_, i) => (
-                                    <tr key={i} className="border-b">
+                                    <tr key={i} className="border-b border-[rgba(132,131,131,0.2)]">
                                         <td className="p-[10px] flex items-center gap-2">
                                             <input type="checkbox" className="accent-[#00538A]" />
                                             <span>Lorem Ipsum</span>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { BsThreeDots } from "react-icons/bs";
 import { FaArrowUp } from "react-icons/fa";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const Itemprop = ({ id, img, info, name, price, details, sales, remaining }) => {
+const Itemprop = ({ id, img, info, name, price, details, sales, remaining, total = 100 }) => {
     const navigate = useNavigate();
 
     const handleRowClick = () => {
@@ -11,6 +11,9 @@ const Itemprop = ({ id, img, info, name, price, details, sales, remaining }) => 
         navigate(`/home/product/${id}`);
         window.scrollTo(0, 0);
     };
+
+    const percentage = (remaining / total) * 100;
+
     return (
         <>
             <div className="main" onClick={handleRowClick}>
@@ -41,9 +44,19 @@ const Itemprop = ({ id, img, info, name, price, details, sales, remaining }) => 
                                 <FaArrowUp className='text-[#FFA52F]' /> {sales}
                             </span>
                         </div>
-                        <div className="flex justify-between p-[5px]">
+
+                        <div className="flex justify-between p-[5px] items-center">
                             <span>Remaining Products</span>
-                            <span >{remaining}</span>
+                            <div className="flex items-center">
+                                {/* <RemainingProgress remaining={30} /> */}
+                                <div className="w-[50px] h-[3px] bg-gray-200 rounded-full overflow-hidden">
+                                    <div
+                                        className="bg-[#FFA52F] rounded-full h-full"
+                                        style={{ width: `${percentage}%` }}
+                                    />
+                                </div>
+                                <span className='pl-[5px]'>{remaining}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

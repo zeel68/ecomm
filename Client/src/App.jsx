@@ -8,6 +8,7 @@ import Products from './pages/Products';
 import Orderlists from './pages/Orderlists';
 import ProductDetails from './pages/ProductDetails';
 import Orderdetails from './pages/Orderdetails';
+import Password from './components/Password';
 
 const App = () => {
   return (
@@ -16,9 +17,11 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />} />
+            <Route path="/password" element={<Password />} />
+
             <Route path="/home" element={<Layout />}>
 
-              <Route path="/home/dashboard" element={<Dashboard />} />
+              <Route path="/home" element={<Dashboard />} />
 
               <Route path="/home/product" element={<Products />} />
               <Route path="/home/product/:id" element={<ProductDetails />} />

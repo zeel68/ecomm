@@ -4,7 +4,7 @@ import orders from '../OrderList/Orders';
 
 const OrderTable = () => {
   return (
-    <div className="p-[15px] sm:p-6 max-w-screen-xl mx-auto">
+    <div className="px-[15px] sm:p-6 max-w-screen-xl mx-auto">
       <div className="bg-white rounded-md p-[15px] shadow-md">
         <p className="text-lg font-semibold mb-4">Recent Orders</p>
         <hr className="text-[#ddddda] py-[5px]" />
