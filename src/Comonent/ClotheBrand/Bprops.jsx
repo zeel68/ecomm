@@ -1,3 +1,5 @@
+import React from "react";
+
 const Bprops = ({ img }) => {
     return (
         <div className="flex justify-center flex-wrap items-center flex-[1_1_100px] max-w-[220px] p-2">

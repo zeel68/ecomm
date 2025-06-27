@@ -3,9 +3,12 @@ import Breadcrum from '../breadcrums/Breadcrum'
 import Addcartitem from './Addcartitem'
 
 const Addcart = () => {
+    const path = [
+        { name: "Home", link: "/" },
+    ];
     return (
         <>
-            <Breadcrum current="Cart" />
+            <Breadcrum path={path} current="Cart" />
             <Addcartitem />
 
         </>

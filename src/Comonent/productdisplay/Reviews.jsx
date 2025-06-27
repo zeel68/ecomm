@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { AiFillFilter } from 'react-icons/ai';
 import { FaChevronDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 import star from './star.jpg';
@@ -35,7 +34,7 @@ const Reviews = () => {
         },
         {
             name: "Anna B.",
-            message: `""I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
+            message: `"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
             date: "Posted on August 14, 2023"
 
         },
@@ -53,13 +52,13 @@ const Reviews = () => {
         },
         {
             name: "Anna B.",
-            message: `""I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
+            message: `"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
             date: "Posted on August 14, 2023"
 
         },
         {
             name: "Anna B.",
-            message: `""I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
+            message: `"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
             date: "Posted on August 14, 2023"
 
         },
@@ -101,14 +100,14 @@ const Reviews = () => {
 
                         </div>
                         <div className="flex flex-wrap justify-between align-middle items-center w-[354px]">
-                            <div className="flex justify-between align-middle  w-[50px] items-center py-4 px-5 rounded-[62px] bg-[#F0F0F0]">
-                                <AiFillFilter />
+                            <div className="flex justify-between align-middle w-[60px] items-center py-3 px-5 rounded-[62px] bg-[#F0F0F0]">
+                                <img src="/assets/img/Filter.png" alt="" />
                             </div>
-                            <div className="flex justify-between align-middle w-[120px] items-center py-4 px-5 rounded-[62px] bg-[#F0F0F0]">
+                            <div className="flex justify-between align-middle w-[120px] items-center py-3 px-5 rounded-[62px] bg-[#F0F0F0]">
                                 <p>Latest</p>
                                 <FaChevronDown />
                             </div>
-                            <div className="block bg-[#000000] text-center text-white w-[166px] py-4 px-5 rounded-[62px]">
+                            <div className="block bg-[#000000] text-center text-white w-[166px] py-3 px-5 rounded-[62px]">
                                 <button>Write a Review</button>
                             </div>
                         </div>

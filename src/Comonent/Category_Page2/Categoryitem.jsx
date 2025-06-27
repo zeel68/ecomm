@@ -21,6 +21,8 @@ const Categoryitem = ({ category }) => {
 
         {/* main page */}
         <div className="flex flex-row gap-6 flex-wrap lg:flex-nowrap mt-6">
+
+          
           <Filter isMobileOpen={open} onClose={() => setopen(false)} />
           <Item category={category} />
         </div>

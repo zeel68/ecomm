@@ -47,8 +47,7 @@ const Navbar = () => {
                             )}
                         </Link>
                         <FaRegUserCircle className="hover:text-amber-950 cursor-pointer" aria-label="User" />
-                        <button onClick={toggleMenu} className="lg:hidden text-xl" aria-label="Toggle menu"
-                        >
+                        <button onClick={toggleMenu} className="lg:hidden text-xl" aria-label="Toggle menu">
                             {menuOpen ? <FaTimes /> : <FaBars />}
                         </button>
                     </div>
@@ -62,8 +61,7 @@ const Navbar = () => {
                             <li onClick={handleNavClick}><Link to="/Onsale" className="block text-black font-semibold hover:text-amber-950">On Sale</Link></li>
                             <li onClick={handleNavClick}><Link to="/Arrival" className="block text-black font-semibold hover:text-amber-950">New Arrivals</Link></li>
                             <li onClick={handleNavClick}><Link to="/BestDeals" className="block text-black font-semibold hover:text-amber-950">Best Deals</Link></li>
-                            <input type="text" placeholder="Search for products" className="w-full px-4 py-2 border border-gray-300 rounded-full text-sm bg-gray-100 outline-none"
-                            />
+                            <input type="text" placeholder="Search for products" className="w-full px-4 py-2 border border-gray-300 rounded-full text-sm bg-gray-100 outline-none" />
                         </ul>
                     </div>
                 )}

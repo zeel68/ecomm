@@ -3,8 +3,8 @@ import { FaChevronDown } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Context } from '../../context/Context';
-import CProps from './CProps';
 import Next from './Next';
+import CategoryProp from './CategoryProp';
 
 const Item = ({ category }) => {
     const { Products } = useContext(Context);
@@ -24,7 +24,7 @@ const Item = ({ category }) => {
                     Casual
                 </h1>
                 <div className="flex items-center gap-2 text-sm text-[#00000099]">
-                    Showing 1–{filtered.length} of {Products.length} Products
+                    Showing 1-{filtered.length} of {Products.length} Products
                     <span className="ml-2 text-black">Sort by: Most Popular</span>
                     <FaChevronDown className="text-black text-xs mt-[2px]" />
                 </div>
@@ -33,7 +33,7 @@ const Item = ({ category }) => {
 
             <div className="flex justify-around flex-wrap">
                 {filtered.map((item) => (
-                    <CProps
+                    <CategoryProp
                         key={item.id}
                         id={item.id}
                         img1={item.img1}

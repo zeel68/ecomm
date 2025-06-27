@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionProp from './SectionProp';
+import { Link } from 'react-router-dom';
 
 const Section1 = () => {
     return (
@@ -15,9 +16,9 @@ const Section1 = () => {
 
                     <p className="font-normal text-[14px] sm:text-[16px] leading-[20px] font-['Satoshi'] mt-4 mb-6">  Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of styl </p>
 
-                    <a href="#" className="inline-flex justify-center items-center h-[52px] w-[210px] bg-black text-white text-[16px] font-medium rounded-full px-[54px] py-[16px] no-underline transition hover:bg-gray-900" >
+                    <Link to="/shop" className="inline-flex justify-center items-center h-[52px] w-[210px] bg-black text-white text-[16px] font-medium rounded-full px-[54px] py-[16px] no-underline transition hover:bg-gray-900">
                         Shop Now
-                    </a>
+                    </Link>
 
                     <div className="mt-8 flex flex-wrap gap-4 sm:gap-0 sm:justify-between w-full sm:w-[596px]">
                         <SectionProp number="200+" information="International Brands" />

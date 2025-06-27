@@ -39,7 +39,7 @@ const Addcartitem = () => {
         <>
             <div className="block">
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-[40px] font-bold font-['Integral CF'] uppercase mb-6">Your Cart</h1>
+                    <h1 className="text-[40px] font-bold font-['satosh'] uppercase mb-6">Your Cart</h1>
 
                     <div className="flex flex-wrap gap-10">
                         {/* left */}
@@ -52,10 +52,10 @@ const Addcartitem = () => {
                                         const totalPrice = price * quantity;
 
                                         return (
-                                            <div key={product.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 mb-0 w-full relative border-b border-[#000]/10" >
+                                            <div key={product.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-5 mb-0 w-full relative border-b border-[#000]/10" >
 
-                                                <div className="flex items-start gap-3 w-full">
-                                                    <img src={product.img1} alt={product.title} className="w-[88px] h-[88px] sm:w-[100px] sm:h-[100px] object-cover rounded-md" />
+                                                <div className="flex items-start gap-3 w-full sm:h-full h-12">
+                                                    <img src={product.img1} alt={product.title} className="w-[99px] h-[99px] sm:h-[100px] sm:w-[100px] object-cover rounded-md" />
 
                                                     <div className="relative w-full">
                                                         <RiDeleteBin5Fill onClick={() => removeTocart(product.id)} className="w-5 h-5 text-red-700 cursor-pointer hover:opacity-80 absolute right-0 top-0" />
@@ -70,14 +70,14 @@ const Addcartitem = () => {
                                                 </div>
 
                                                 {/* Quantity Controls */}
-                                                <div className="flex justify-end mt-4 sm:mt-0 sm:absolute sm:bottom-2 sm:right-2">
-                                                    <div className="flex w-[126px] h-[44px] items-center justify-between rounded-[62px] py-3 px-5 bg-[#F0F0F0]">
+                                                <div className="flex justify-end mt-4 sm:mt-0 sm:absolute sm:bottom-2 right-0 sm:right-2">
+                                                    <div className="flex sm:w-[126px] w-[90px] h-[35px] sm:h-[44px] items-center justify-between rounded-[62px] py-3 px-5 bg-[#F0F0F0]">
                                                         <button onClick={() => removeTocart(product.id)}>
-                                                            <FaMinus size={15}/>
+                                                            <FaMinus size={15} />
                                                         </button>
                                                         <p>{quantity}</p>
                                                         <button onClick={() => increaseCart(product.id)}>
-                                                            <FaPlus size={15}/>
+                                                            <FaPlus size={15} />
                                                         </button>
                                                     </div>
                                                 </div>

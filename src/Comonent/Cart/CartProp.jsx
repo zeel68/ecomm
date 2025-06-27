@@ -2,9 +2,9 @@ import React from 'react';
 import star from '../../../public/assets/img/Star.png';
 import { Link } from 'react-router-dom';
 
-const PCart = ({ img1, title, price, oldprice, id }) => {
+const CartProp = ({ img1, title, price, oldprice, id }) => {
     return (
-        <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3">
+        <div className="w-full sm:w-1/3 lg:w-1/3 xl:w-1/4 p-3">
             <div className="bg-white rounded-lg p-4">
                 {/* product display page when click on page */}
                 <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
@@ -27,4 +27,4 @@ const PCart = ({ img1, title, price, oldprice, id }) => {
     );
 };
 
-export default PCart;
+export default CartProp;

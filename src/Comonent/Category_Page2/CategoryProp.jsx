@@ -3,13 +3,13 @@ import star from '../../../public/assets/img/Star.png';
 import { Link } from 'react-router-dom';
 import Products from '../../Products';
 
-const CProps = ({ img1, title, price, oldprice, id }) => {
+const CategoryProp = ({ img1, title, price, oldprice, id }) => {
     return (
-        <div className="sm:w-1/3 lg:w-1/3 xl:w-1/3 p-3">
+        <div className="sm:w-1/3 lg:w-1/3 xl:w-1/3 p-4">
             <div className="bg-white rounded-lg">
 
                 {/* product display page when click on page */}
-                
+
                 <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
                     <img src={img1} alt={title} className="w-full h-auto rounded-md" />
                 </Link>
@@ -26,9 +26,11 @@ const CProps = ({ img1, title, price, oldprice, id }) => {
                     <span className="text-xl font-semibold">{price}</span>
                     <span className="line-through text-black ml-3 opacity-40 text-xl font-semibold">{oldprice}</span>
                 </div>
+
+
             </div>
         </div>
     );
 };
 
-export default CProps;
+export default CategoryProp;

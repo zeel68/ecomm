@@ -11,10 +11,15 @@ const Product = () => {
   const { ProductId } = useParams();
   const product = Products.find((e) => e.id === Number(ProductId));
 
+  const path = [
+    { name: "Home", link: "/" },
+    { name: product?.category || "Category", link: `/${product?.category}` },
+  ];
+
   return (
     <>
       {product && (
-        <Breadcrum path={["Home", product.category]} current={product.title} />
+        <Breadcrum path={path} current={product.title} />
       )}
       <Productdisplay product={product} />
       <Reviews />

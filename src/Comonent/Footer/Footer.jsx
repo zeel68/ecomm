@@ -33,15 +33,15 @@ const Footer = () => {
                         </h2>
                     </div>
                     <div className="w-full sm:w-1/2">
-                        <input
-                            type="email"
-                            placeholder="Enter your Email Address"
-                            className="w-full h-[48px] rounded-full mb-3 px-4 bg-white text-black outline-none"
-                        />
+                        <div className="relative mb-3">
+                            <img src="/assets/img/mail.png" alt="" className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" />
+                            <input type="email" placeholder="Enter your Email Address" className="w-full h-[48px] rounded-full pl-12 pr-4 bg-white text-black outline-none" />
+                        </div>
                         <button className="w-full h-[48px] rounded-full bg-white text-black hover:bg-gray-200 font-semibold transition">
                             Subscribe to Newsletter
                         </button>
                     </div>
+
                 </div>
             </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-wrap justify-between gap-y-10 gap-x-6 mt-14 text-center sm:text-left">
 
-                    <div className="w-full sm:w-[100%] lg:w-[20%]">
+                    <div className="w-full sm:w-[100%] md:w-[20%] lg:w-[20%]">
                         <img src="/assets/img/SHOP.CO.png" alt="Logo" className="mx-auto sm:mx-0 mb-4"
                         />
                         <p className="text-sm text-gray-700">
@@ -57,16 +57,16 @@ const Footer = () => {
                         </p>
                         <div className="flex mt-[34px] w-[140px] justify-between mx-auto sm:mx-0">
 
-                            <FaTwitter className='cursor-pointer size-5'/>
-                            <FaFacebook className='cursor-pointer size-5'/>
-                            <CiInstagram className='cursor-pointer size-5'/>
-                            <FaGithub className='cursor-pointer size-5'/>
+                            <FaTwitter className='cursor-pointer size-5' />
+                            <FaFacebook className='cursor-pointer size-5' />
+                            <CiInstagram className='cursor-pointer size-5' />
+                            <FaGithub className='cursor-pointer size-5' />
                         </div>
                     </div>
 
                     {/* items */}
                     {Item.map((section, idx) => (
-                        <div key={idx} className="w-1/3 sm:w-[45%] md:w-[20%] lg:w-[15%] mx-4 text-start uppercase">
+                        <div key={idx} className="w-full p-5 sm:w-[45%] md:w-[20%] lg:w-[15%] text-start uppercase">
                             <h4 className="font-semibold text-[16px] mb-3">{section.title}</h4>
                             <ul className="space-y-2 text-sm text-gray-700">
                                 {section.links.map((link, i) => (

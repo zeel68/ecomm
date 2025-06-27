@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import star from './star.jpg';
+import star from '/assets/img/Star.png';
 import { Context } from "../../context/Context";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
@@ -19,9 +19,9 @@ const Productdisplay = ({ product }) => {
     return (
         <div className="max-w-[1440px] mx-auto px-4 sm:px-10 py-8 box-border">
 
-            <div className="flex flex-col gap-10 sm:flex-row md:flex-col lg:flex-row">
-                {/* Left Section */}
-                <div className="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row align-middle items-center justify-center md:w-full gap-6 w-full sm:w-1/2">
+            <div className="flex flex-col gap-12 sm:flex-row md:flex-col  lg:flex-row">
+                {/* Left */}
+                <div className="flex flex-col-reverse sm:flex-row md:flex-row lg:flex-row align-middle items-center justify-center md:w-full gap-6 w-full sm:w-full">
                     {/* imge */}
                     <div className="flex flex-row sm:flex-col gap-4">
                         <img src={product.img2} alt="sub1" className="w-full max-w-[152px] sm:w-[152px] h-auto sm:h-[167px] object-cover rounded-[12px] cursor-pointer" />
@@ -36,8 +36,8 @@ const Productdisplay = ({ product }) => {
                 </div>
 
                 {/* right */}
-                <div className="w-full sm:w-1/2 flex flex-col gap-5  md:w-full">
-                    <h1 className="text-black text-[32px] sm:text-[40px] font-bold font-['Integral CF']">{product.title}</h1>
+                <div className="w-full sm:w-1/2 flex flex-col gap-3  md:w-full">
+                    <h1 className="text-black text-[32px] sm:text-[40px] font-bold font-['Anton']">{product.title}</h1>
 
                     {/* Stars */}
                     <div className="flex gap-1 mt-1">

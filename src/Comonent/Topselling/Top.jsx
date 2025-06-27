@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Context } from '../../context/Context';
-import PCart from '../Cart/PCart';
 import { Link } from 'react-router-dom';
+import CategoryProp from '../Category_Page2/CategoryProp';
+import CartProp from '../Cart/CartProp';
 const Top = (props) => {
     const { Products } = useContext(Context);
 
@@ -20,7 +21,7 @@ const Top = (props) => {
                             Products.map((item) => {
                                 if (props.category === item.category) {
                                     return (
-                                        <PCart
+                                        <CartProp
                                             key={item.id}
                                             id={item.id}
                                             img1={item.img1}

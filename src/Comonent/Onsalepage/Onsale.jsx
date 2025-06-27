@@ -4,10 +4,12 @@ import Categoryitem from '../Category_Page2/Categoryitem'
 
 
 const Onsale = () => {
-
+    const path = [
+        { name: "Home", link: "/" },
+    ];
     return (
         <>
-            <Breadcrum current="OnSale" />
+            <Breadcrum path={path} current="OnSale" />
             <Categoryitem category="onsale" />
         </>
     )
