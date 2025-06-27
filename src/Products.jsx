@@ -7,7 +7,7 @@ const Products = [
         img4: "/assets/img/img1.png",
         title: "T-Shirt",
         price: "$181.87",
-        category: "arrival",
+        category: "Arrival",
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const Products = [
 
         price: "$99.00",
         oldprice: "$100.00",
-        category: "arrival",
+        category: "Arrival",
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const Products = [
 
         title: "Checkered Shirt",
         price: "$129.50",
-        category: "arrival",
+        category: "Arrival",
     },
     {
         id: 4,
@@ -42,7 +42,7 @@ const Products = [
         title: "Skinny Fit Jeans",
         price: "$145.20",
         oldprice: "$150.00",
-        category: "arrival",
+        category: "Arrival",
     },
     // products
 

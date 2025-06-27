@@ -17,10 +17,7 @@ const Next = () => {
             <button
                 onClick={() => setCurrentPage(prev => prev - 1)}
                 disabled={currentPage === 1}
-                className={`border px-[15px] py-[5px] m-[5px] rounded-md flex items-center gap-1 transition ${currentPage === 1
-                    ? 'bg-gray-200 text-gray-500 cursor-not-allowed'
-                    : 'hover:bg-black hover:text-white text-black'
-                    }`}
+                className={`border px-[15px] py-[5px] m-[5px] rounded-md flex items-center gap-1 transition ${currentPage === 1 ? 'bg-gray-200 text-gray-500 cursor-not-allowed' : 'hover:bg-black hover:text-white text-black'}`}
             >
                 <FaAngleLeft /> Previous
             </button>

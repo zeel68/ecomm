@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Filter from './Filter';
 import Item from './Item';
 import { LuListFilter } from 'react-icons/lu';
-import Breadcrum from '../breadcrums/Breadcrum';
 
 const Categoryitem = ({ category }) => {
   const [open, setopen] = useState(false);
@@ -11,7 +10,7 @@ const Categoryitem = ({ category }) => {
     <div className="block">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
 
-        
+      
         {/* responsive button */}
         <div className="flex justify-end items-center mt-4 lg:hidden">
           <button onClick={() => setopen(true)} className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-md">

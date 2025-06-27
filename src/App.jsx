@@ -10,6 +10,7 @@ import Cat from './Comonent/Category_Page2/Cat';
 import Bestdeals from './Comonent/Bestdealpage/Bestdeals';
 import MainPage from './Comonent/Arrivalpage/MainPage';
 import Onsale from './Comonent/Onsalepage/Onsale';
+import Addcart from './Comonent/Addcart/Addcart';
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
 
         <Route path='/product' element={<Product />} />
         <Route path="/Product/:ProductId" element={<Product />} />
-        {/* <Route path="/cart" element={<Cart />} /> */}
+        <Route path="/cart" element={<Addcart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -57,16 +57,16 @@ const Footer = () => {
                         </p>
                         <div className="flex mt-[34px] w-[140px] justify-between mx-auto sm:mx-0">
 
-                            <FaTwitter />
-                            <FaFacebook />
-                            <CiInstagram />
-                            <FaGithub />
+                            <FaTwitter className='cursor-pointer size-5'/>
+                            <FaFacebook className='cursor-pointer size-5'/>
+                            <CiInstagram className='cursor-pointer size-5'/>
+                            <FaGithub className='cursor-pointer size-5'/>
                         </div>
                     </div>
 
                     {/* items */}
                     {Item.map((section, idx) => (
-                        <div key={idx} className="w-1/3 sm:w-[45%] md:w-[20%] lg:w-[10%] mx-4 text-start uppercase">
+                        <div key={idx} className="w-1/3 sm:w-[45%] md:w-[20%] lg:w-[15%] mx-4 text-start uppercase">
                             <h4 className="font-semibold text-[16px] mb-3">{section.title}</h4>
                             <ul className="space-y-2 text-sm text-gray-700">
                                 {section.links.map((link, i) => (

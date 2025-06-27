@@ -11,23 +11,19 @@ const Style = () => {
 
                     <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
                         <div className="w-[100%] sm:w-[200px] md:w-[240px] h-full sm:h-[240px] lg:w-auto lg:h-auto">
-                            <img src="/assets/img/f1.png" alt="img" className="w-full h-full object-cover rounded-lg"
-                            />
+                            <img src="/assets/img/f1.png" alt="img" className="w-full h-full object-cover rounded-lg"/>
                         </div>
 
                         <div className="w-[100%] sm:w-[200px] md:w-[240px] h-[200px] sm:h-[240px] lg:w-auto lg:h-auto">
-                            <img src="/assets/img/f2.png" alt="img" className="w-full h-full object-cover rounded-lg"
-                            />
+                            <img src="/assets/img/f2.png" alt="img" className="w-full h-full object-cover rounded-lg"/>
                         </div>
 
                         <div className="w-[100%] sm:w-[200px] md:w-[240px] h-[200px] sm:h-[240px] lg:w-auto lg:h-auto">
-                            <img src="/assets/img/f3.png" alt="img" className="w-full h-full object-cover rounded-lg"
-                            />
+                            <img src="/assets/img/f3.png" alt="img" className="w-full h-full object-cover rounded-lg"/>
                         </div>
 
                         <div className="w-[100%] sm:w-[200px] md:w-[240px] h-full sm:h-[240px] lg:w-auto lg:h-auto">
-                            <img src="/assets/img/f4.png" alt="img" className="w-full h-full object-cover rounded-lg"
-                            />
+                            <img src="/assets/img/f4.png" alt="img" className="w-full h-full object-cover rounded-lg"/>
                         </div>
                     </div>
                 </div>

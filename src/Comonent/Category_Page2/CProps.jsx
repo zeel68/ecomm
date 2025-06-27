@@ -7,11 +7,13 @@ const CProps = ({ img1, title, price, oldprice, id }) => {
     return (
         <div className="sm:w-1/3 lg:w-1/3 xl:w-1/3 p-3">
             <div className="bg-white rounded-lg">
+
+                {/* product display page when click on page */}
+                
                 <Link to={`/product/${id}`} onClick={() => window.scrollTo(0, 0)}>
                     <img src={img1} alt={title} className="w-full h-auto rounded-md" />
                 </Link>
-                
-                {/* <img src={img1} alt={title} className="w-full h-auto rounded-md" /> */}
+
                 <p className="text-[20px] font-semibold mt-4 font-['Satoshi']">{title}</p>
 
                 <div className="flex gap-1 my-2">
