@@ -2,7 +2,7 @@ import React from 'react';
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Breadcrum from '../Breadcrum/Breadcrum';
 
-const Title = () => {
+const Hometop = () => {
     return (
         <div className="py-[15px]">
             <div className="max-w-screen-xl mx-auto px-[15px]">
@@ -14,7 +14,8 @@ const Title = () => {
                     </div>
                     <div className="text-sm font-medium flex items-center text-gray-700 ">
                         <FaRegCalendarAlt className="mr-[5px] text-base " />
-                        Oct 11, 2023 - Nov 11, 2022
+                        Oct 11, 2023 -
+                        Nov 11, 2022
                     </div>
                 </div>
             </div>
@@ -22,4 +23,4 @@ const Title = () => {
     );
 };
 
-export default Title;
+export default Hometop;

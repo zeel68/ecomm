@@ -17,14 +17,15 @@ const Itemprop = ({ id, img, info, name, price, details, sales, remaining, total
     return (
         <>
             <div className="main" onClick={handleRowClick}>
-                <div className="p-[15px] box-border rounded-md shadow-md bg-white w-[100%]" >
+                <div className="w-full p-[15px] bg-white shadow-md rounded" >
+
                     <div className="flex items-start justify-between gap-4 mb-4">
                         <div className="flex items-center gap-4">
-                            <img className='w-[60px] h-[60px] p-[10px] object-contain bg-[#E0EAF1]' src={img} alt={name} />
+                            <img className='w-[60px] h-[60px] p-[5px] object-contain bg-[#E0EAF1]' src={img} alt={name} />
                             <div>
-                                <h2 className="font-semibold text-gray-800">{info}</h2>
-                                <p className="text-sm text-gray-600">{name}</p>
-                                <h3 className="text-black font-semibold">{price}</h3>
+                                <h2 className="font-medium text-gray-800">{info}</h2>
+                                <p className="text-xs text-gray-600">{name}</p>
+                                <h3 className="text-black font-medium">{price}</h3>
                             </div>
                         </div>
                         <div className="bg-[#E0EAF1] p-[5px] h-[30px] rounded-md cursor-pointer">
@@ -32,9 +33,9 @@ const Itemprop = ({ id, img, info, name, price, details, sales, remaining, total
                         </div>
                     </div>
 
-                    <div className="mb-3 py-[10px]">
-                        <h2 className='text-[16px] font-semibold'>Summary</h2>
-                        <p className="text-sm text-gray-600">{details}</p>
+                    <div className="py-[10px]">
+                        <h2 className='text-[14px] font-medium'>Summary</h2>
+                        <p className="text-xs text-gray-600">{details}</p>
                     </div>
 
                     <div className="text-sm text-gray-700 border rounded-sm p-[10px] border-[#23232133]">

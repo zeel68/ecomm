@@ -12,7 +12,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         <>
             {sidebarOpen && <div className="overlay" onClick={() => setSidebarOpen(false)}></div>}
 
-            <aside className={`w-[20%] bg-[#E0F0FB] border border-[#00538A] sidebar ${sidebarOpen ? 'active' : ''}`}>
+            <aside className={`flex w-[20%] bg-[#E0F0FB] border border-[#00538A] sidebar ${sidebarOpen ? 'active' : ''}`}>
                 <div className="p-[15px]">
 
                     <div className="img">

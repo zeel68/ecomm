@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
 import Footer from '../componet/Footer/Footer'
-import OrderDetails from '../componet/OrderDetails/OrderDetails'
+import Orderdetails from '../componet/OrderDetails/OrderDetails'
 
-const Orderdetails = () => {
+const OrderDetails = () => {
     return (
         <>
             <div className="bg-[#E0F0FB]">
-                <OrderDetails />
+                <Orderdetails />
                 <Footer />
             </div>
         </>
     )
 }
 
-export default Orderdetails
+export default OrderDetails

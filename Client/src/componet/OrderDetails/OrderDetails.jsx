@@ -6,7 +6,7 @@ import { IoBagHandleOutline } from "react-icons/io5"
 import { IoPrint } from "react-icons/io5";
 import orders from '../OrderList/Orders';
 
-const OrderDetails = () => {
+const Orderdetails = () => {
     const { orderid } = useParams();
     const product = orders.find(p => p.orderId.toString() === orderid);
 
@@ -29,9 +29,9 @@ const OrderDetails = () => {
                 <div className="bg-white rounded-md p-[15px] shadow-md my-[20px]">
                     {/* Header */}
                     <div className="flex flex-wrap justify-between items-center mb-[15px]">
-                        <h2 className="flex font-semibold text-lg">
+                        <h2 className="flex font-semibold text-lg mb-[5px]">
                             Orders ID: <td className="text-black">#{product.orderId}</td>
-                            <span className="ml-[8px] text-xs text-black bg-[#FFA52FCC] px-[5px] py-[5px] rounded">Pending</span>
+                            <span className="ml-[5px] text-xs text-black bg-[#FFA52FCC] px-[5px] py-[5px] rounded">Pending</span>
                         </h2>
                         <div className="flex items-center gap-6 ">
                             <select className="text-sm rounded px-[20px] p-[5px] bg-[#F0F6F9] shadow-md">
@@ -49,8 +49,8 @@ const OrderDetails = () => {
                         <FaRegCalendarAlt className="mr-[5px] text-base" />
                         Feb 16, 2022 - Feb 20, 2022</p>
 
-                    <div className="flex grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 py-[10px] ">
-                        <div className="border rounded p-[10px] w-full">
+                    <div className="lg:flex md:flex sm:block grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 py-[10px] ">
+                        <div className="border rounded p-[10px] w-full mb-[10px]">
                             <p className="flex font-semibold mb-1">
                                 <div className="items-center justify-center bg-[#00538A] rounded-md mr-[5px]">
                                     <IoBagHandleOutline className="icon text-3xl m-[3px] p-[5px] text-white" />
@@ -92,13 +92,13 @@ const OrderDetails = () => {
                     </div>
 
                     {/* Payment  */}
-                    <div className="flex lg:grid-cols-2 gap-4">
-                        <div className="border rounded p-[10px] shadow-sm w-[33%]">
+                    <div className="lg:flex gap-4">
+                        <div className="border rounded p-[10px] shadow-sm sm:w-[33%] lg:[100%] mb-[5px] ">
                             <p className="font-semibold mb-[5px]">Payment Info</p>
                             <p className="flex text-[#70706E]"><img className="w-[10%] h-[100%] mt-[8px] pr-[5px]" src="../../src/assets/Vector.png" alt="vector" /> Master Card **** 6557</p>
                             <p className="text-sm text-[#70706E]">Business name: Shristi Singh</p>
                         </div>
-                        <div className=" pl-[5px] w-[68%]">
+                        <div className=" pl-[5px] sm:w-[68%] lg:[100%]">
                             <label className="block text-sm font-medium">Note</label>
                             <textarea rows={3} placeholder="Type some notes" className="w-full rounded p-[5px] text-sm outline"></textarea>
                         </div>
@@ -164,5 +164,5 @@ const OrderDetails = () => {
     )
 }
 
-export default OrderDetails
+export default Orderdetails
 

@@ -51,10 +51,11 @@ function Navbar({ toggleSidebar }) {
             <div className="inner flex justify-between items-center p-[15px]">
                 <i className="fa fa-bars menu-toggle-btn" onClick={toggleSidebar}></i>
 
-                <div className="left">
-                    <input className='relative  w-[400px] rounded-md border border-[#D7D7D7DA] shadow-custom bg-[#E0F0FB] p-[5px] text-sm' type="text" placeholder='Search' />
-                    <CiSearch className='absolute top-[24px] left-[380px] ' />
+                <div className="left relative ">
+                    <input className='sm:w-[400px] rounded-md border border-[#D7D7D7DA] shadow-custom bg-[#E0F0FB] p-[5px] text-sm ' type="text" placeholder='Search' />
+                    <CiSearch className='absolute top-1/2 transform -translate-y-1/2 right-4' />
                 </div>
+
 
                 <div className="right flex justify-between">
 
@@ -93,10 +94,10 @@ function Navbar({ toggleSidebar }) {
 
                     <div className="flex " onClick={admindropdown}>
                         <div className="user">
-                            <img className="w-[100%] rounded-[50%] max-w-[35px]" src="../src/assets/img.jpg" alt="User" />
+                            <img className="w-full rounded-[50%] max-w-[35px]" src="../src/assets/img.jpg" alt="User" />
                         </div>
                         <div className="flex items-center">
-                            <div className="flex flex-wrap p-[5px] items-center justify-start mr-[5px] w-[85px]">
+                            <div className=" flex-wrap p-[5px] items-center justify-start mr-[5px] w-[85px] hidden sm:block">
                                 <p className='text-black text-[14px]'>{username || 'User'}</p>
                                 {/* <span className='text-inner'>{email || 'user@example.com'}</span> */}
                             </div>

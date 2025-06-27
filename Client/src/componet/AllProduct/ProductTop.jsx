@@ -27,4 +27,4 @@ const ProductTop = () => {
     )
 }
 
-export default ProductTop
+export default ProductTop 

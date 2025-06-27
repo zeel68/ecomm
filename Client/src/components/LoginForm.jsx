@@ -37,11 +37,11 @@ const Login = () => {
   }, [registered]);
 
   return (
-    <div className="flex min-h-screen sm:p-6 max-w-screen-xl mx-auto">
+    <div className="flex min-h-screen sm:p-[50px] max-w-screen-xl mx-auto  ">
       {/* right */}
-      <img className='w-full h-screen object-cover bg-[#00538A]' src="../src/assets/login.png" alt="login img" />
+      <img className='sm:hidden md:block lg:block w-full sm:flex-co h-screen object-cover bg-[#00538A]' src="../src/assets/login.png" alt="login img" />
       {/* left */}
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center p-[15px]  h-screen sm:p-[15px] sm:h-[100dvh]">
         <div className="md:w-1/2  p-[10px] w-[400px]">
 
           <h2 className='text-2xl font-semibold'>{isLogin ? 'Login' : 'Register'}</h2>

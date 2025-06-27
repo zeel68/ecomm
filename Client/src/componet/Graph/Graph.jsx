@@ -8,9 +8,9 @@ const Graph = () => {
         <>
             <div className="block py-[15px]">
                 <div className="block px-[15px] mx-auto box-border max-w-screen-xl">
-                    <div className="flex">
+                    <div className="sm:flex flex-row md:flex-col">
                         {/* right */}
-                        <div className="block w-[60%] bg-[#ffffff] rounded-md shadow-md p-[10px]">
+                        <div className="w-full bg-[#ffffff] rounded-md shadow-md p-[10px] sm:w-[60%] md:w-[60%] mr-[10px]">
                             <div className="flex justify-between">
                                 <p className='pt-[23px] pr-0 pb-0 text-lg font-semibold'>Sale Graph</p>
                                 <div className="flex mh-[15px]">
@@ -26,7 +26,7 @@ const Graph = () => {
                             </div>
                         </div>
                         {/* left */}
-                        <div className="w-[40%] bg-[#ffffff] p-[20px] rounded-md shadow-md ml-[15px] max-w-sm">
+                        <div className="w-full bg-[#ffffff] p-[15px] rounded-md shadow-md lg:ml-[10px]  max-w-sm sm:w-[100%] md:[100%] mt-[5px] ">
                             <div className="flex justify-between">
                                 <p className='pt-[15px] pr-0 text-lg font-semibold'>Best Sellers</p>
                                 <CiMenuKebab className="text-black text-2xl" />

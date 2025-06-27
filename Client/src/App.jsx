@@ -7,7 +7,7 @@ import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
 import Orderlists from './pages/Orderlists';
 import ProductDetails from './pages/ProductDetails';
-import Orderdetails from './pages/Orderdetails';
+import OrderDetails from './pages/Orderdetails';
 import Password from './components/Password';
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
               <Route path="/home/product/:id" element={<ProductDetails />} />
 
               <Route path="/home/orderlist" element={<Orderlists />} />
-              <Route path="/home/orderlist/:orderid" element={<Orderdetails />} />
+              <Route path="/home/orderlist/:orderid" element={<OrderDetails />} />
 
             </Route>
           </Routes>

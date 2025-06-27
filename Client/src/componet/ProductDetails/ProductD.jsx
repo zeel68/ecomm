@@ -14,7 +14,7 @@ const ProductD = () => {
     const fileInputRef = useRef(null);
 
     const handleDivClick = () => {
-        fileInputRef.current.click(); 
+        fileInputRef.current.click();
     };
 
     const handleFileChange = (e) => {
@@ -42,7 +42,7 @@ const ProductD = () => {
                 {/* product details */}
 
                 <div className="p-[15px] bg-white rounded-md shadow-m">
-                    <div className="flex grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl mx-auto">
+                    <div className="lg:flex flex-row gap-6 md:flex max-w-7xl">
 
                         {/* Left Section */}
                         <div className="w-full lg:w-1/2">
@@ -151,11 +151,17 @@ const ProductD = () => {
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="flex justify-end gap-4 mt-[10px]">
-                                <button className="bg-black text-white px-[35px] rounded hover:bg-[#3a3a3a]">Update</button>
-                                <button className="bg-[#00538A] text-white px-[35px] rounded hover:bg-[#00538ad5]">Delete</button>
-                                <button className="bg-gray-200 text-black px-[35px] rounded hover:bg-[#d8dadc]">Cancel</button>
+                            {/* <div className="flex justify-end gap-1 mt-[10px]">
+                                <button className="bg-black text-white lg:px-[35px] sm:px-[10px] rounded hover:bg-[#3a3a3a]">Update</button>
+                                <button className="bg-[#00538A] text-white lg:px-[35px] px-[10px] rounded hover:bg-[#00538ad5]">Delete</button>
+                                <button className="bg-gray-200 text-black lg:px-[35px] px-[10px] rounded hover:bg-[#d8dadc]">Cancel</button>
+                            </div> */}
+                            <div className="flex justify-end gap-1 mt-[10px]">
+                                <button className="bg-black text-white px-[10px] lg:px-[35px] rounded hover:bg-[#3a3a3a]">Update</button>
+                                <button className="bg-[#00538A] text-white px-[10px] lg:px-[35px] rounded hover:bg-[#00538ad5]">Delete</button>
+                                <button className="bg-gray-200 text-black px-[10px] lg:px-[35px] rounded hover:bg-[#d8dadc]">Cancel</button>
                             </div>
+
                         </div>
 
                     </div>

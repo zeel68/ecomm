@@ -6,10 +6,11 @@ export default {
   ],
   theme: {
     extend: {
-      // fontFamily: {
-      //   rubik: ['Rubik', 'sans-serif'],
-      // },
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'],
+      },
     },
+
   },
   plugins: [],
 }

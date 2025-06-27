@@ -16,9 +16,9 @@ const Items = () => {
     return (
         <>
             <div className="main">
-                <div className="p-[15px] sm:p-6 max-w-screen-xl mx-auto">
+                <div className="p-[15px] sm:p-[12px] max-w-screen-xl mx-auto box-border">
                     <div className="inner-main">
-                         <div className="flex flex-wrap grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="flex flex-wrap gap-4 box-border justify-around">
                             {currentProducts.map(product => (
                                 <Itemprop
                                     key={product.id}
@@ -32,7 +32,7 @@ const Items = () => {
                                     remaining={product.remaining}
                                 />
                             ))}
-                        </div> 
+                        </div>
 
                         <div className="py-[20px] flex flex-wrap items-center">
                             {/* pages num */}
