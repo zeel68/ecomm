@@ -20,7 +20,7 @@ const Orderprop = ({ product, orderId, date, name, img, status, amount }) => {
                 <input type="checkbox" className="w-4 h-4" />
             </td>
             <td className="p-[15px]">{product}</td>
-            <td className="p-[15px]">#{product.orderId}</td>
+            <td className="p-[15px]">#{orderId}</td>
             <td className="p-[15px]">{date}</td>
             <td className="p-[15px]">
                 <div className="flex items-center gap-2">

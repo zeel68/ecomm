@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Breadcrum from '../Breadcrum/Breadcrum'
 import products from '../AllProduct/allproducts';
 import { useParams } from 'react-router-dom';
@@ -9,6 +9,21 @@ const ProductD = () => {
     const product = products.find(p => p.id.toString() === id);
 
     if (!product) return <p className="p-5 text-red-500">Order not found</p>;
+
+
+    const fileInputRef = useRef(null);
+
+    const handleDivClick = () => {
+        fileInputRef.current.click(); 
+    };
+
+    const handleFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            console.log("Selected File:", file.name);
+        }
+    };
+
     return (
         <>
             <div className="max-w-screen-xl mx-auto px-[15px]">
@@ -38,43 +53,43 @@ const ProductD = () => {
 
                             <div className='mb-[10px]'>
                                 <label className="block font-medium text-lg">Product Name</label>
-                                <input type="text" className="w-full border rounded text-sm " />
+                                <input type="text" className="w-full rounded text-sm outline p-[5px]" />
                             </div>
 
                             <div className='mb-[10px]'>
                                 <label className="block font-medium mb-[5px] text-lg">Product Description</label>
-                                <textarea rows="3" className="w-full border rounded text-sm"></textarea>
+                                <textarea rows="3" className="w-full rounded text-sm outline  p-[5px]"></textarea>
                             </div>
 
                             <div className='mb-[10px]'>
                                 <label className="block font-medium mb-[5px] text-lg">Category</label>
-                                <input type="text" className="w-full border rounded text-sm" />
+                                <input type="text" className="w-full outline  rounded text-sm p-[5px]" />
                             </div>
 
                             <div className='mb-[10px]'>
                                 <label className="block font-medium text-lg">Brand Name</label>
-                                <input type="text" className="w-full border rounded text-sm" />
+                                <input type="text" className="w-full outline  rounded text-sm p-[5px]" />
                             </div>
 
                             <div className="grid grid-cols-2 gap-4 mb-[10px]">
                                 <div>
                                     <label className="block font-medium  text-lg">SKU</label>
-                                    <input type="text" className="w-full border rounded text-sm" />
+                                    <input type="text" className="w-full outline rounded text-sm p-[5px]" />
                                 </div>
                                 <div>
                                     <label className="block font-medium text-lg">Stock Quantity</label>
-                                    <input type="number" className="w-full border rounded text-sm" />
+                                    <input type="number" className="w-full outline rounded text-sm p-[5px]" />
                                 </div>
                             </div>
 
                             <div className="grid grid-cols-2 gap-4 mb-[10px]">
                                 <div>
                                     <label className="block font-medium text-lg">Regular Price</label>
-                                    <input type="text" className="w-full border rounded text-sm" />
+                                    <input type="text" className="w-full outline  rounded text-sm p-[5px]" />
                                 </div>
                                 <div>
                                     <label className="block font-medium  text-lg">Sale Price</label>
-                                    <input type="text" className="w-full border rounded text-sm" />
+                                    <input type="text" className="w-full  outline rounded text-sm p-[5px]" />
                                 </div>
                             </div>
 
@@ -95,12 +110,27 @@ const ProductD = () => {
                                 <span className="text-gray-400">Image Preview</span>
                             </div>
 
-                            {/* Product Gallery */}
                             <div>
                                 <label className="block font-medium mb-[10px]">Product Gallery</label>
-                                <div className="border border-dashed border-gray-300 rounded p-[15px] text-center text-sm text-gray-500">
-                                    <p>Drop your images here, or browse</p>
-                                    <p className="text-xs">(jpg, png are allowed)</p>
+                                <div>
+                                    {/* img drop */}
+                                    <div
+                                        className="border border-dashed border-[#232321] rounded p-[15px] text-center text-sm text-gray-500 cursor-pointer"
+                                        onClick={handleDivClick}
+                                    >
+                                        <div className="flex flex-col items-center justify-center">
+                                            <img src="/src/assets/ph_image-light.png" alt="upload" className="w-8 mb-[5px]" />
+                                            <p>Drop your images here, or <span className="text-blue-600 underline">browse</span></p>
+                                            <p className="text-xs">(jpg, png are allowed)</p>
+                                        </div>
+                                    </div>
+                                    <input
+                                        type="file"
+                                        accept="image/png, image/jpeg"
+                                        ref={fileInputRef}
+                                        className="hidden"
+                                        onChange={handleFileChange}
+                                    />
                                 </div>
 
                                 <div className="mt-[15px] space-y-3">
@@ -122,9 +152,9 @@ const ProductD = () => {
 
                             {/* Action Buttons */}
                             <div className="flex justify-end gap-4 mt-[10px]">
-                                <button className="bg-black text-white px-[35px] rounded">Update</button>
-                                <button className="bg-[#00538A] text-white px-[35px] rounded">Delete</button>
-                                <button className="bg-gray-200 text-black px-[35px] rounded">Cancel</button>
+                                <button className="bg-black text-white px-[35px] rounded hover:bg-[#3a3a3a]">Update</button>
+                                <button className="bg-[#00538A] text-white px-[35px] rounded hover:bg-[#00538ad5]">Delete</button>
+                                <button className="bg-gray-200 text-black px-[35px] rounded hover:bg-[#d8dadc]">Cancel</button>
                             </div>
                         </div>
 
